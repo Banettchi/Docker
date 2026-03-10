@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOSW Docker Lab</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 48px 56px;
+            max-width: 600px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+        }
+        .badge {
+            display: inline-block;
+            background: #e94560;
+            color: #fff;
+            border-radius: 20px;
+            padding: 4px 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        .subtitle { color: #a0aec0; font-size: 0.95rem; margin-bottom: 36px; }
+        .endpoints { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+        .endpoint {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .endpoint:hover { background: rgba(233,69,96,0.2); transform: translateX(4px); }
+        .method {
+            background: #e94560;
+            border-radius: 6px;
+            padding: 3px 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            flex-shrink: 0;
+        }
+        .path { font-family: monospace; font-size: 0.95rem; flex: 1; }
+        .desc { color: #718096; font-size: 0.8rem; }
+        .footer { margin-top: 32px; color: #4a5568; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">🐳 Docker Lab</div>
+        <h1>DOSW Docker Lab</h1>
+        <p class="subtitle">Framework propio · Concurrente · Graceful Shutdown</p>
+
+        <div class="endpoints">
+            <a href="/greeting" class="endpoint">
+                <span class="method">GET</span>
+                <span class="path">/greeting</span>
+                <span class="desc">Hello, World!</span>
+            </a>
+            <a href="/greeting?name=Diego" class="endpoint">
+                <span class="method">GET</span>
+                <span class="path">/greeting?name=Diego</span>
+                <span class="desc">Hello, Diego!</span>
+            </a>
+            <a href="/hello" class="endpoint">
+                <span class="method">GET</span>
+                <span class="path">/hello</span>
+                <span class="desc">Health check</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            Servidor corriendo en un ThreadPool de 10 hilos · Puerto: 6000
+        </div>
+    </div>
+</body>
+</html>
